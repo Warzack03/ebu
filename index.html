@@ -34,6 +34,16 @@
             cursor: pointer;
         }
 
+        .heart-icon {
+            position: absolute;
+            width: 50px; /* Ajusta el tamaño según sea necesario */
+            height: 50px; /* Ajusta el tamaño según sea necesario */
+            top: 50%;
+            left: 105%; /* Posiciona la imagen a la derecha del texto */
+            transform: translate(-50%, -50%);
+            opacity: 0.8; /* Ajusta la opacidad si es necesario */
+        }
+
         #gift-image,
         #gift-video {
             width: 300px;
@@ -72,7 +82,7 @@
     </style>
 </head>
 <body>
-    <h1 class="message">Felices 5 años EBU</h1>
+    <h1 class="message">Felices 5 años EBU <img src="https://www.svgrepo.com/show/395900/blue-heart.svg" alt="Corazón Azul Celeste" class="heart-icon"></h1>
     <div id="gift-container" onclick="openGift()">
         <img id="gift-image" src="imagen.png" alt="Regalo Cerrado">
         <video id="gift-video" src="video.mp4" preload="auto"></video>
