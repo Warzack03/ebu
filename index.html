@@ -31,29 +31,32 @@
             border-radius: 10px;
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
             cursor: pointer;
+            perspective: 1000px;
         }
 
-        #gift::before,
-        #gift::after {
-            content: '';
+        .lid {
             position: absolute;
-            background: #ffffff;
-        }
-
-        #gift::before {
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            transform: translateY(-50%);
-        }
-
-        #gift::after {
-            left: 50%;
+            width: 150px;
+            height: 75px;
+            background: #e91e63;
             top: 0;
-            width: 10px;
-            height: 100%;
-            transform: translateX(-50%);
+            left: 0;
+            border-radius: 10px 10px 0 0;
+            transform-origin: top;
+            transform: rotateX(0deg);
+            transition: transform 0.5s ease;
+        }
+
+        .box {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: #f06292;
+            border-radius: 10px;
+        }
+
+        #gift.open .lid {
+            transform: rotateX(-90deg);
         }
 
         #card {
@@ -62,6 +65,7 @@
             top: 50%;
             left: 50%;
             width: 300px;
+            height: 200px;
             padding: 20px;
             background: #fff;
             border-radius: 10px;
@@ -69,12 +73,15 @@
             transform: translate(-50%, -50%) scale(0.5);
             opacity: 0;
             transition: transform 0.5s ease, opacity 0.5s ease;
+            background-image: url('https://via.placeholder.com/300x200?text=Carta');
+            background-size: cover;
         }
 
         #card p {
             margin: 0;
             font-size: 1rem;
             line-height: 1.5;
+            color: #333;
         }
 
         #gift.open + #card {
@@ -84,18 +91,21 @@
         }
 
         .message {
-            margin-top: 50px;
             font-size: 1.2rem;
             font-weight: bold;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <div id="gift" onclick="openGift()"></div>
+    <h1 class="message">Felices 5 años EBU</h1>
+    <div id="gift" onclick="openGift()">
+        <div class="lid"></div>
+        <div class="box"></div>
+    </div>
     <div id="card">
         <p>MI TEXTO MI TEXTOMI TEXTOMI TEXTOMI TEXTOMI TEXTOMI TEXTOMI TEXTOMI TEXTOMI TEXTOMI TEXTOMI TEXTOMI TEXTOMI TEXTO</p>
     </div>
-    <h1 class="message">Felices 5 años EBU</h1>
     <h1 class="message">Por muchos más a tu lado</h1>
 
     <script>
