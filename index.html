@@ -128,6 +128,7 @@ FELICES PRIMEROS 5 AÑOS DE UNA VIDA ENTERA EBU!</p>
             const giftImage = document.getElementById('gift-image');
             const giftVideo = document.getElementById('gift-video');
             const card = document.getElementById('card');
+            const giftContainer = document.getElementById('gift-container'); // Corregir referencia
 
             giftImage.style.display = 'none';
             giftVideo.style.display = 'block';
@@ -138,7 +139,7 @@ FELICES PRIMEROS 5 AÑOS DE UNA VIDA ENTERA EBU!</p>
                     giftVideo.pause();
                     giftVideo.style.display = 'none';
                     card.style.display = 'block';
-                    gift-container.style.display = 'none';
+                    giftContainer.style.display = 'none';
                 }
             });
         }
