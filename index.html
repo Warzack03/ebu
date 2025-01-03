@@ -1,122 +1,105 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Un Regalo de Amor</title>
-    <style>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Cambiado de height a min-height */
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        color: #5e2b47;
+        text-align: center;
+        padding: 20px; /* Agregar padding para evitar que el contenido se corte */
+        box-sizing: border-box; /* Incluir padding en el ancho total */
+    }
+
+    h1 {
+        font-family: 'Georgia', serif;
+        font-size: 2.5rem;
+        color: #C25100;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    #gift-container {
+        position: relative;
+        width: 300px;
+        height: 150px;
+        cursor: pointer;
+    }
+
+    .heart-icon {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 50%;
+        left: 105%;
+        transform: translate(-50%, -50%);
+        opacity: 0.8;
+        margin-left: 10px;
+    }
+
+    #gift-image,
+    #gift-video {
+        width: 100%; /* Ajustado al 100% del contenedor */
+        max-width: 300px; /* Ancho máximo */
+        height: auto; /* Mantener proporción */
+    }
+
+    #gift-video {
+        display: none;
+    }
+
+    #card {
+        display: none;
+        position: relative; /* Cambiado de absolute a relative */
+        margin: 20px auto;
+        padding: 20px;
+        width: 90%; /* Usar el 90% del ancho de la pantalla */
+        max-width: 600px; /* Ancho máximo en dispositivos grandes */
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+    }
+
+    #card p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #333;
+        word-wrap: break-word; /* Asegurar que las palabras largas no se salgan del contenedor */
+        text-align: justify; /* Justificar texto */
+    }
+
+    .message {
+        font-size: 2rem; /* Ajuste del tamaño de fuente */
+        font-weight: bold;
+        margin-bottom: 20px;
+        padding: 0 10px; /* Márgenes laterales */
+    }
+
+    @media (max-width: 768px) {
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            color: #5e2b47;
-            text-align: center;
+            font-size: 14px; /* Reducir tamaño general en pantallas pequeñas */
         }
 
         h1 {
-            position: relative;
-            font-family: 'Georgia', serif;
-            font-size: 2.5rem;
-            color: #C25100;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-            margin: 20px 0;
-            z-index: 10;
-            text-align: center;
-        }
-
-        #gift-container {
-            position: relative;
-            width: 300px;
-            height: 150px;
-            cursor: pointer;
-        }
-
-        .heart-icon {
-            position: absolute;
-            width: 50px; /* Ajusta el tamaño según sea necesario */
-            height: 50px; /* Ajusta el tamaño según sea necesario */
-            top: 50%;
-            left: 105%; /* Posiciona la imagen a la derecha del texto */
-            transform: translate(-50%, -50%);
-            opacity: 0.8; /* Ajusta la opacidad si es necesario */
-            margin-left: 10px;
-        }
-
-        #gift-image,
-        #gift-video {
-            width: 300px;
-            height: 150px;
-            display: block;
-        }
-
-        #gift-video {
-            display: none;
-        }
-
-        #card {
-            display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            z-index: 100;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        #card p {
-            margin: 0;
-            font-size: 1rem;
-            line-height: 1.5;
-            color: #333;
+            font-size: 1.8rem; /* Reducir tamaño de los títulos */
         }
 
         .message {
-            font-size: 3rem; /* Tamaño de fuente grande para destacar */
-            font-weight: bold;
-            margin-bottom: 20px;
+            font-size: 1.5rem; /* Tamaño más pequeño para mensajes */
         }
-    </style>
-</head>
-<body>
-    <h1 class="message">Felices 5 años EBU <img src="https://www.svgrepo.com/show/395900/blue-heart.svg" alt="Corazón Azul Celeste" class="heart-icon"></h1>
-    <div id="gift-container" onclick="openGift()">
-        <img id="gift-image" src="imagen.png" alt="Regalo Cerrado">
-        <video id="gift-video" src="video.mp4" preload="auto"></video>
-    </div>
-    <div id="card">
-        <p>5 años ya, quien me iba a decir a mi ese 5 de diciembre de 2019 que conocería al amor de mi vida. Me encanta poder decir que tenemos un proyecto de vida juntos y que, a pesar de todo lo que hemos vivido increíble juntos, vendrán miles de momentos más que serán incluso mejores. Nunca pensé que una persona iba a motivarme tanto todos los días por conseguir lo que me propongo. La mayoría de cosas las enfoco a poder conseguir dinero o ahorrar lo máximo posible para poder tener el piso lo antes posible y vivir juntos que es una de las cosas que más me motiva ahora. Podría ponerme a recordar todos los momentos que hemos pasado juntos pero entonces esta carta no acabaría nunca, por eso, prefiero imaginar lo que puede pasar en un futuro próximo. En breve echaremos a mi tío de casa, lo que implicará mejor calidad de vida y poder ahorrar más dinero para la siguiente casa. A su vez, tu encontrarás trabajo y con otro sueldo más (aun que tu ahorres a parte) también será más rápido todo. Con todo junto, conseguiremos reformar la casa a nuestro antojo, tendremos que ir varios días al Ikea, pensar todo 30 veces, imaginarnos muchas más todo para darle retoques y, algún día, por fin, llegar a NUESTRA casa por primera vez juntos. Además, una vez echemos a mi tío y empiece esta segunda parte, podremos hacer más viajes, tu también estás teniendo mas ingresos y poco a poco tenemos mas posibilidades de hacer planes más sofisticados, aun que siempre nos quedará la mantita calentitooos. Estoy tan orgulloso de ti, poco a poco, con las redes vas mejorando y teniendo unos ingresos estables que oye, si conseguimos todo como se espera, te puedes sacar tu sobre sueldo bastante curioso. Te lo digo siempre pero es verdad, eres lo mejor que tengo y lucharé siempre por mantenerlo!
-<br>
-<br>
-FELICES PRIMEROS 5 AÑOS DE UNA VIDA ENTERA EBU!</p>
-    </div>
-    <h1 class="message">Por muchos más a tu lado</h1>
 
-    <script>
-        function openGift() {
-            const giftImage = document.getElementById('gift-image');
-            const giftVideo = document.getElementById('gift-video');
-            const card = document.getElementById('card');
-
-            giftImage.style.display = 'none';
-            giftVideo.style.display = 'block';
-            giftVideo.play();
-
-            giftVideo.addEventListener('timeupdate', function() {
-                if (giftVideo.currentTime >= 5) {
-                    giftVideo.pause();
-                    giftVideo.style.display = 'none';
-                    card.style.display = 'block';
-                }
-            });
+        #card {
+            padding: 15px;
         }
-    </script>
-</body>
-</html>
+
+        #card p {
+            font-size: 0.9rem; /* Ajustar tamaño del texto en pantallas pequeñas */
+        }
+    }
+</style>
