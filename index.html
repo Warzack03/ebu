@@ -1,4 +1,10 @@
-<style>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Regalo de Amor</title>
+    <style>
     body {
         display: flex;
         flex-direction: column;
@@ -103,3 +109,39 @@
         }
     }
 </style>
+</head>
+<body>
+    <h1 class="message">Felices 5 años EBU <img src="https://www.svgrepo.com/show/395900/blue-heart.svg" alt="Corazón Azul Celeste" class="heart-icon"></h1>
+    <div id="gift-container" onclick="openGift()">
+        <img id="gift-image" src="imagen.png" alt="Regalo Cerrado">
+        <video id="gift-video" src="video.mp4" preload="auto"></video>
+    </div>
+    <div id="card">
+        <p>5 años ya, quien me iba a decir a mi ese 5 de diciembre de 2019 que conocería al amor de mi vida. Me encanta poder decir que tenemos un proyecto de vida juntos y que, a pesar de todo lo que hemos vivido increíble juntos, vendrán miles de momentos más que serán incluso mejores. Nunca pensé que una persona iba a motivarme tanto todos los días por conseguir lo que me propongo. La mayoría de cosas las enfoco a poder conseguir dinero o ahorrar lo máximo posible para poder tener el piso lo antes posible y vivir juntos que es una de las cosas que más me motiva ahora. Podría ponerme a recordar todos los momentos que hemos pasado juntos pero entonces esta carta no acabaría nunca, por eso, prefiero imaginar lo que puede pasar en un futuro próximo. En breve echaremos a mi tío de casa, lo que implicará mejor calidad de vida y poder ahorrar más dinero para la siguiente casa. A su vez, tu encontrarás trabajo y con otro sueldo más (aun que tu ahorres a parte) también será más rápido todo. Con todo junto, conseguiremos reformar la casa a nuestro antojo, tendremos que ir varios días al Ikea, pensar todo 30 veces, imaginarnos muchas más todo para darle retoques y, algún día, por fin, llegar a NUESTRA casa por primera vez juntos. Además, una vez echemos a mi tío y empiece esta segunda parte, podremos hacer más viajes, tu también estás teniendo mas ingresos y poco a poco tenemos mas posibilidades de hacer planes más sofisticados, aun que siempre nos quedará la mantita calentitooos. Estoy tan orgulloso de ti, poco a poco, con las redes vas mejorando y teniendo unos ingresos estables que oye, si conseguimos todo como se espera, te puedes sacar tu sobre sueldo bastante curioso. Te lo digo siempre pero es verdad, eres lo mejor que tengo y lucharé siempre por mantenerlo!
+<br>
+<br>
+FELICES PRIMEROS 5 AÑOS DE UNA VIDA ENTERA EBU!</p>
+    </div>
+    <h1 class="message">Por muchos más a tu lado</h1>
+
+    <script>
+        function openGift() {
+            const giftImage = document.getElementById('gift-image');
+            const giftVideo = document.getElementById('gift-video');
+            const card = document.getElementById('card');
+
+            giftImage.style.display = 'none';
+            giftVideo.style.display = 'block';
+            giftVideo.play();
+
+            giftVideo.addEventListener('timeupdate', function() {
+                if (giftVideo.currentTime >= 5) {
+                    giftVideo.pause();
+                    giftVideo.style.display = 'none';
+                    card.style.display = 'block';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
